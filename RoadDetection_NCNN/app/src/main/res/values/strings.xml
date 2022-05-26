@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RoadDetection</string>
+    <string name="app_title">RoadDetection</string>
+    <string name="capture">Capture</string>
+    <string name="stop">Stop</string>
+    <string name="audio">Audio</string>
+    <string name="camera">Camera</string>
+</resources>
