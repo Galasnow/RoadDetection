@@ -22,7 +22,6 @@ import java.util.*
 import java.util.concurrent.ExecutionException
 import java.util.concurrent.Executors
 
-
 class VideoCaptureActivity : AppCompatActivity() {
     private lateinit var binding: ActivityVideoBinding
     private val cameraExecutor = Executors.newSingleThreadExecutor()
@@ -33,7 +32,6 @@ class VideoCaptureActivity : AppCompatActivity() {
     private lateinit var mCameraProvider: ProcessCameraProvider//相机信息
     private lateinit var mPreview: Preview//预览对象
     private var mImageCapture: ImageCapture? = null
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,7 +44,6 @@ class VideoCaptureActivity : AppCompatActivity() {
             ActivityCompat.requestPermissions(this, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS)
         }
 
-
         binding.captureButton.setOnClickListener {
             if (allPermissionsGranted()) {
                 takeVideo()
@@ -55,9 +52,7 @@ class VideoCaptureActivity : AppCompatActivity() {
             } else {
                 ActivityCompat.requestPermissions(this, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS)
             }
-
         }
-
     }
 
     private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {
@@ -151,7 +146,6 @@ class VideoCaptureActivity : AppCompatActivity() {
 //                getContentResolver(),
 //        MediaStore.Video.Media.EXTERNAL_CONTENT_URI,
 //        contentValues).build();
-
 
         //开始录像
         if (ActivityCompat.checkSelfPermission(

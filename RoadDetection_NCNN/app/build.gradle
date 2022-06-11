@@ -4,30 +4,26 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
-        applicationId "com.roaddetection"
+        applicationId 'com.roaddetection'
         minSdk 26
-        targetSdk 32
-        versionCode 1
-        versionName "1.0"
+        targetSdk 33
+        versionCode 2
+        versionName "1.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
             cmake {
                 cppFlags ''
-                arguments '-DANDROID_PLATFORM=android-24', '-DANDROID_STL=c++_static', '-DANDROID_STL=c++_shared'
+                arguments '-DANDROID_PLATFORM=android-24', '-DANDROID_STL=c++_static', '-DANDROID_STL=c++_shared', "-DANDROID_ARM_NEON=TRUE"
             }
         }
         ndk {
             moduleName "ncnn"
             abiFilters "armeabi-v7a","arm64-v8a"
         }
-    }
-
-    viewBinding {
-        enabled = true
     }
 
     buildTypes {
@@ -49,11 +45,11 @@ android {
             version '3.18.1'
         }
     }
+
     buildFeatures {
         viewBinding true
     }
     ndkVersion '24.0.8215888'
-    namespace 'com.roaddetection'
 }
 
 dependencies {
@@ -72,7 +68,6 @@ dependencies {
 
     // CameraX core library using the camera2 implementation
     def camerax_version = "1.1.0-beta03"
-  //  def camerax_version = "1.1.0-alpha06"
     // The following line is optional, as the core library is included indirectly by camera-camera2
     implementation("androidx.camera:camera-core:${camerax_version}")
     implementation("androidx.camera:camera-camera2:${camerax_version}")
@@ -84,18 +79,12 @@ dependencies {
     implementation("androidx.camera:camera-view:${camerax_version}")
     // If you want to additionally use the CameraX Extensions library
     //implementation("androidx.camera:camera-extensions:${camerax_version}")
-/*
-    implementation 'com.android.support:multidex:1.0.3'
-    // crash
-    implementation 'com.zxy.android:recovery:1.0.0'
 
-
-    // photoview
-    implementation 'com.github.chrisbanes:PhotoView:2.3.0'
-    */
-//    implementation 'com.bm.photoview:library:1.4.1'
     // FFMMR
     implementation 'com.github.wseemann:FFmpegMediaMetadataRetriever-core:1.0.16'
     implementation 'com.github.wseemann:FFmpegMediaMetadataRetriever-native:1.0.16'
 
+    // coil
+    // test
+    implementation 'io.coil-kt:coil:2.1.0'
 }

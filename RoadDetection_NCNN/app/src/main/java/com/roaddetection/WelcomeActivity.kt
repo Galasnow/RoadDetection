@@ -3,12 +3,10 @@ package com.roaddetection
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.CompoundButton
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.roaddetection.databinding.ActivityWelcomeBinding
-
 
 class WelcomeActivity : AppCompatActivity() {
     private val NANODET = 1
@@ -30,7 +28,7 @@ class WelcomeActivity : AppCompatActivity() {
             dialog.show()
         }
 
-        binding.tbUseGpu.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
+        binding.tbUseGpu.setOnCheckedChangeListener{_, isChecked ->
             useGPU = isChecked
             if (useGPU) {
                 val builder = AlertDialog.Builder(this@WelcomeActivity)
@@ -43,26 +41,24 @@ class WelcomeActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this@WelcomeActivity, "CPU mode", Toast.LENGTH_SHORT).show()
             }
-        })
+        }
 
-        binding.btnStartDetect0.setOnClickListener(View.OnClickListener {
+        binding.btnStartDetect0.setOnClickListener {
             val intent = Intent(this@WelcomeActivity, MainActivity::class.java)
-            intent.putExtra("USE_GPU",useGPU)
-            intent.putExtra("USE_MODEL",NANODET)
+            intent.putExtra("useGPU", useGPU)
+            intent.putExtra("useModel", NANODET)
             this@WelcomeActivity.startActivity(intent)
-        })
+        }
 
-        binding.btnTakephoto.setOnClickListener(View.OnClickListener {
+        binding.btnTakephoto.setOnClickListener {
             val intent = Intent(this@WelcomeActivity, PhotoCaptureActivity::class.java)
             this@WelcomeActivity.startActivity(intent)
-        })
+        }
 
-        binding.btnTakevideo.setOnClickListener(View.OnClickListener {
+        binding.btnTakevideo.setOnClickListener {
             val intent = Intent(this@WelcomeActivity, VideoCaptureActivity::class.java)
             this@WelcomeActivity.startActivity(intent)
-        })
-
+        }
 
     }
-
 }

@@ -21,7 +21,8 @@ add_library( # Sets the name of the library.
         SHARED
 
         # Provides a relative path to your source file(s).
-        NanoDet.cpp
+#        native-lib.cpp
+        NanoDetPlus.cpp
         jni_interface.cpp
         )
 

@@ -29,11 +29,11 @@ typedef struct BoxInfo {
     int label;
 } BoxInfo;
 
-class YOLOv5 {
+class YoloV5 {
 public:
-    YOLOv5(AAssetManager *mgr, const char *param, const char *bin, bool useGPU);
+    YoloV5(AAssetManager *mgr, const char *param, const char *bin, bool useGPU);
 
-    ~YOLOv5();
+    ~YoloV5();
 
     std::vector<BoxInfo> detect(JNIEnv *env, jobject image, float threshold, float nms_threshold);
     std::vector<std::string> labels{"person", "bicycle", "car", "motorcycle", "airplane", "bus", "train", "truck", "boat", "traffic light",
@@ -62,7 +62,7 @@ private:
     };
 
 public:
-    static YOLOv5 *detector;
+    static YoloV5 *detector;
     static bool hasGPU;
     static bool toUseGPU;
 };

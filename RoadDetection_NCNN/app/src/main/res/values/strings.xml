@@ -1,8 +1,18 @@
 <resources>
     <string name="app_name">RoadDetection</string>
     <string name="app_title">RoadDetection</string>
+    <string name="warning">Warning</string>
+    <string name="NanoDet_Plus">NanoDet_Plus</string>
+    <string name="PhotoCapture">PhotoCapture</string>
+    <string name="VideoCapture">VideoCapture</string>
+    <string name="photo">Photo</string>
+    <string name="nms">NMS</string>
+    <string name="threshold">Threshold</string>
+    <string name="thr_nms">THR:-.--,NMS:-.--</string>
+    <string name="video">Video</string>
+    <string name="please_wait">Please wait...</string>
+    <string name="back">Back</string>
+    <string name="imageView">detection result</string>
     <string name="capture">Capture</string>
     <string name="stop">Stop</string>
-    <string name="audio">Audio</string>
-    <string name="camera">Camera</string>
 </resources>
